@@ -30,7 +30,7 @@ router.get('/', async(req, res) => {
         dateView: getTimeNow()
     })
     await home.save()
-    return res.status(200).render('index.ejs');
+    return res.status(200).render('./index.ejs');
 })
 
 module.exports = router;
