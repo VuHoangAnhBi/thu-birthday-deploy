@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const routesConfig = require('./config');
-const {wishModel, loveModel} = require('../database/model');
+const {homeModel, wishModel, loveModel} = require('../database/model');
 
 const moment = require('moment')
 
@@ -25,7 +25,11 @@ router.post(routesConfig.love, async (req, res) => {
 })
 
 // render view
-router.get('/', (req, res) => {
+router.get('/', async(req, res) => {
+    const home = new homeModel({
+        dateView: getTimeNow()
+    })
+    await home.save()
     return res.status(200).render('index.ejs');
 })
 

@@ -20,12 +20,12 @@ if (loveWishButton) {
 
 function postWishView() {
     axios.post('/thu/wish')
-    .then(() => {})
+    .then(() =>  { console.log('wish') })
     .catch(console.error)
 }
 
 function postLoveView() {
     axios.post('/thu/love')
-        .then(() => { })
+        .then(() => { console.log('love') })
         .catch(console.error)
 }
