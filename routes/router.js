@@ -26,10 +26,10 @@ router.post(routesConfig.love, async (req, res) => {
 
 // render view
 router.get('/', async(req, res) => {
-    // const home = new homeModel({
-    //     dateView: getTimeNow()
-    // })
-    // await home.save()
+    const home = new homeModel({
+        dateView: getTimeNow()
+    })
+    await home.save()
     return res.status(200).render('index.ejs');
 })
 
