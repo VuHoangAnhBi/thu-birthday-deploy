@@ -4,8 +4,9 @@ const {homeModel, wishModel, loveModel} = require('../database/model');
 
 const moment = require('moment')
 
+const timezone = 7 * 60 * 60;
 const getTimeNow = () => {
-    return moment(Date.now()).format('DD-MM-YYYY  HH:mm:ss');
+    return moment(Date.now() + timezone).format('DD-MM-YYYY  HH:mm:ss');
 }
 
 router.post(routesConfig.wish, async (req, res) => {
